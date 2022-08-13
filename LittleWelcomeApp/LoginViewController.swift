@@ -98,12 +98,12 @@ final class LoginViewController: UIViewController {
 
 // MARK: - Extensions
 extension LoginViewController {
-    private func showAlert(with title: String, and message: String, andFocusAfter: UITextField? = nil) {
+    private func showAlert(with title: String, and message: String, andFocusAfter textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let closeAction = UIAlertAction(title: "Ok", style: .default) { _ in
             self.passwordTF.text = ""
-            if let focusTFAfter = andFocusAfter {
-                focusTFAfter.becomeFirstResponder()
+            if let textField = textField {
+                textField.becomeFirstResponder()
             }
         }
 
