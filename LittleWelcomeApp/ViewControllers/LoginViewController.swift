@@ -14,14 +14,25 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTF: UITextField!
 
     // MARK: - Private Properties
-    private let correctUserName = "User"
-    private let correctPassword = "Password"
+    private let user = User.getUser()
 
     // MARK: - Override Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        guard let tabBar = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBar.viewControllers else { return }
 
-        welcomeVC.welcomeText = userNameTF.text
+        for viewController in viewControllers {
+            if let viewController = viewController as? WelcomeViewController {
+                viewController.firstName = user.profile.firstName
+            } else if let viewController = viewController as? AboutViewController {
+                setAboutData(for: viewController)
+            } else if let navigationVC = viewController as? UINavigationController {
+                guard let portfolioVC = navigationVC.topViewController as? PortfolioTableViewController else {
+                    return
+                }
+                portfolioVC.portfolio = user.profile.portfolio
+            }
+        }
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -40,11 +51,11 @@ final class LoginViewController: UIViewController {
 
     // MARK: - IBAction
     @IBAction func remindUserName() {
-        showAlert(with: "Ooops", and: "Your User Name is \(correctUserName) 🤐")
+        showAlert(with: "Ooops", and: "Your User Name is \(user.username) 🤐")
     }
 
     @IBAction func remindPassword() {
-        showAlert(with: "Ooops", and: "Your Password is \(correctPassword) 🫣")
+        showAlert(with: "Ooops", and: "Your Password is \(user.password) 🫣")
     }
 
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
@@ -53,6 +64,14 @@ final class LoginViewController: UIViewController {
     }
 
     // MARK: - Private Methods
+    private func setAboutData(for viewController: AboutViewController) {
+        viewController.firstName = user.profile.firstName
+        viewController.lastName = user.profile.lastName
+        viewController.aboutText = user.profile.aboutText
+        viewController.age = user.profile.age
+        viewController.avatar = user.profile.avatar
+    }
+
     private func checkEmptyUserNameTF() -> Bool {
         guard let userName = userNameTF.text, !userName.isEmpty else {
             showAlert(
@@ -69,11 +88,7 @@ final class LoginViewController: UIViewController {
         guard let password = passwordTF.text, !password.isEmpty else {
             showAlert(
                 with: "Неа...",
-                and: """
-В целях повышения уровня безопасности приложения ввод пустого пароля не допустим!
-В случае возникновения трудностей с запоминанием пароля нажимите на кнопку "Forgot Password"
-Никому не сообщайте пароль, который увидите, как бы сильно не хотелось! Это крайне секретная информация.
-""",
+                and: "Пожалуйста, вводите корректный пароль",
                 andFocusAfter: passwordTF
             )
             return false
@@ -82,7 +97,7 @@ final class LoginViewController: UIViewController {
     }
 
     private func checkAuthCorrect() -> Bool {
-        guard userNameTF.text == correctUserName && passwordTF.text == correctPassword else {
+        guard userNameTF.text == user.username && passwordTF.text == user.password else {
             showAlert(
                 with: "Не пущу!!!",
                 and: "И не уговаривай. Лучше проверь логин или пароль....",
