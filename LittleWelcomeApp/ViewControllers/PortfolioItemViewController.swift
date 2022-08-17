@@ -22,8 +22,10 @@ final class PortfolioItemViewController: UIViewController {
         super.viewDidLoad()
         if let portfolioItem = portfolioItem {
             titleLabel.text = portfolioItem.siteName
-            thumbImageView.image = UIImage(named: portfolioItem.siteImage)
             descriptionLabel.text = portfolioItem.siteDescription
+
+            thumbImageView.image = UIImage(named: portfolioItem.siteImage)
+            thumbImageView.layer.cornerRadius = 30
         }
     }
 

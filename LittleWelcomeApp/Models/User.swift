@@ -14,8 +14,8 @@ struct User {
 extension User {
     static func getUser() -> User {
         User(
-            username: "u",
-            password: "p",
+            username: "User",
+            password: "Password",
             profile: Profile.getProfile()
         )
     }
