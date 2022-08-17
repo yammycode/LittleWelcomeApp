@@ -27,10 +27,10 @@ final class LoginViewController: UIViewController {
             } else if let viewController = viewController as? AboutViewController {
                 setAboutData(for: viewController)
             } else if let navigationVC = viewController as? UINavigationController {
-                guard let portfolioVC = navigationVC.topViewController as? PortfolioTableViewController else {
-                    return
-                }
+                guard let portfolioVC = navigationVC.topViewController as? PortfolioTableViewController else { return }
                 portfolioVC.portfolio = user.profile.portfolio
+            } else if let viewController = viewController as? SkillsViewController {
+                viewController.skills = user.profile.skills
             }
         }
     }
@@ -65,8 +65,7 @@ final class LoginViewController: UIViewController {
 
     // MARK: - Private Methods
     private func setAboutData(for viewController: AboutViewController) {
-        viewController.firstName = user.profile.firstName
-        viewController.lastName = user.profile.lastName
+        viewController.fullName = user.profile.fullName
         viewController.aboutText = user.profile.aboutText
         viewController.age = user.profile.age
         viewController.avatar = user.profile.avatar
@@ -107,8 +106,6 @@ final class LoginViewController: UIViewController {
         }
         return true
     }
-    
-
 }
 
 // MARK: - Extensions

@@ -12,6 +12,11 @@ struct Profile {
     let age: Int
     let avatar: String
     let portfolio: [Portfolio]
+    let skills: [Skill]
+
+    var fullName: String {
+        "\(firstName) \(lastName)"
+    }
 }
 
 extension Profile {
@@ -22,7 +27,8 @@ extension Profile {
             aboutText: "Full-stack WEB developer с большим желанием стать IOS разработчиком 😉",
             age: 37,
             avatar: "avatar",
-            portfolio: Portfolio.getPortfolio()
+            portfolio: Portfolio.getPortfolio(),
+            skills: Skill.getSkills()
         )
     }
 }

@@ -27,11 +27,15 @@ final class PortfolioItemViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        setGradientBackground()
+        super.viewWillAppear(animated)
+    }
+
     // MARK: - IBAction
     @IBAction func openSite() {
         if let portfolioItem = portfolioItem, let url = URL(string: portfolioItem.siteUrl) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
-
 }

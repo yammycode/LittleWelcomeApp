@@ -21,6 +21,9 @@
 		C83E89BE28AC1C6700A1F37C /* PortfolioItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E89BD28AC1C6700A1F37C /* PortfolioItemViewController.swift */; };
 		C83E89C028AC220E00A1F37C /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E89BF28AC220E00A1F37C /* Portfolio.swift */; };
 		C83E89C228AC2FD200A1F37C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83E89C128AC2FD200A1F37C /* TabBarViewController.swift */; };
+		C8BBE14328ACC556008FE750 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BBE14228ACC556008FE750 /* Skill.swift */; };
+		C8BBE14528ACC771008FE750 /* SkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BBE14428ACC771008FE750 /* SkillsViewController.swift */; };
+		C8BBE14828ACD0C5008FE750 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BBE14728ACD0C5008FE750 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		C83E89BD28AC1C6700A1F37C /* PortfolioItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioItemViewController.swift; sourceTree = "<group>"; };
 		C83E89BF28AC220E00A1F37C /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		C83E89C128AC2FD200A1F37C /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		C8BBE14228ACC556008FE750 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		C8BBE14428ACC771008FE750 /* SkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsViewController.swift; sourceTree = "<group>"; };
+		C8BBE14728ACD0C5008FE750 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 				C8041B9A28AB5F7000477EAA /* User.swift */,
 				C8041B9C28AB601900477EAA /* Profile.swift */,
 				C83E89BF28AC220E00A1F37C /* Portfolio.swift */,
+				C8BBE14228ACC556008FE750 /* Skill.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -72,6 +79,7 @@
 				C83E89BB28AC126D00A1F37C /* PortfolioTableViewController.swift */,
 				C83E89BD28AC1C6700A1F37C /* PortfolioItemViewController.swift */,
 				C83E89C128AC2FD200A1F37C /* TabBarViewController.swift */,
+				C8BBE14428ACC771008FE750 /* SkillsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 		C813412728A6953500946359 /* LittleWelcomeApp */ = {
 			isa = PBXGroup;
 			children = (
+				C8BBE14628ACD0A6008FE750 /* Extensions */,
 				C8041B9628AB5E8600477EAA /* Models */,
 				C8041B9728AB5E9A00477EAA /* ViewControllers */,
 				C8041B9828AB5EBA00477EAA /* Storyboards */,
@@ -121,6 +130,14 @@
 				C813413628A6953700946359 /* Info.plist */,
 			);
 			path = LittleWelcomeApp;
+			sourceTree = "<group>";
+		};
+		C8BBE14628ACD0A6008FE750 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C8BBE14728ACD0C5008FE750 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +219,11 @@
 				C83E89C028AC220E00A1F37C /* Portfolio.swift in Sources */,
 				C813413D28A69CF100946359 /* WelcomeViewController.swift in Sources */,
 				C8041B9F28AB94D400477EAA /* AboutViewController.swift in Sources */,
+				C8BBE14528ACC771008FE750 /* SkillsViewController.swift in Sources */,
 				C813412928A6953500946359 /* AppDelegate.swift in Sources */,
+				C8BBE14328ACC556008FE750 /* Skill.swift in Sources */,
 				C8041B9B28AB5F7000477EAA /* User.swift in Sources */,
+				C8BBE14828ACD0C5008FE750 /* UIViewControllerExtension.swift in Sources */,
 				C813412B28A6953500946359 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
