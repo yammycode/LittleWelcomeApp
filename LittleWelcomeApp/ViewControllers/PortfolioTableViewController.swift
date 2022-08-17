@@ -36,6 +36,4 @@ final class PortfolioTableViewController: UITableViewController {
             portfolioItemVC.portfolioItem = portfolio[indexPath.row]
         }
     }
-
-
 }

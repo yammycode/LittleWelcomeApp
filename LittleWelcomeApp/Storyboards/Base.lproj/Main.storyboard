@@ -144,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="967" y="850"/>
         </scene>
-        <!--About-->
+        <!--About View Controller-->
         <scene sceneID="ljh-I0-Xcm">
             <objects>
                 <viewController id="iNU-gp-26l" customClass="AboutViewController" customModule="LittleWelcomeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -153,14 +153,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jZq-3k-mW2">
-                                <rect key="frame" x="87" y="89" width="240" height="240"/>
+                                <rect key="frame" x="87" y="133" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="6BS-5E-8dS"/>
                                     <constraint firstAttribute="width" constant="240" id="Pv0-jV-g2r"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zM6-GG-M51">
-                                <rect key="frame" x="118" y="369" width="178.5" height="109"/>
+                                <rect key="frame" x="118" y="413" width="178.5" height="109"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия Имя" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ada-kO-H1R">
                                         <rect key="frame" x="0.0" y="0.0" width="178.5" height="31.5"/>
@@ -195,7 +195,7 @@
                             <constraint firstItem="jZq-3k-mW2" firstAttribute="top" secondItem="hl5-8b-fS2" secondAttribute="top" constant="45" id="hlc-jM-GWQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" image="person.circle.fill" catalog="system" id="u4Z-kg-n4M"/>
+                    <navigationItem key="navigationItem" id="Gfs-pY-nmz"/>
                     <connections>
                         <outlet property="aboutTextLabel" destination="nOc-zM-Y1Q" id="PJ1-cl-WlE"/>
                         <outlet property="ageLabel" destination="VJr-wz-PkQ" id="QDJ-xY-TNW"/>
@@ -205,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Tp-qc-IJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="850"/>
+            <point key="canvasLocation" x="1713" y="1588"/>
         </scene>
         <!--Portfolio Table View Controller-->
         <scene sceneID="FKh-Wl-erL">
@@ -317,8 +317,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="mNg-WE-Z9M" kind="relationship" relationship="viewControllers" id="WY4-c7-FEl"/>
-                        <segue destination="iNU-gp-26l" kind="relationship" relationship="viewControllers" id="NRp-4t-9zZ"/>
-                        <segue destination="7bt-X8-FWN" kind="relationship" relationship="viewControllers" id="lQu-2p-lNA"/>
+                        <segue destination="vCS-Im-lRm" kind="relationship" relationship="viewControllers" id="NRp-4t-9zZ"/>
+                        <segue destination="5oR-h8-O9r" kind="relationship" relationship="viewControllers" id="lQu-2p-lNA"/>
                         <segue destination="3fP-Lm-Nbk" kind="relationship" relationship="viewControllers" id="NZI-zQ-C2J"/>
                     </connections>
                 </tabBarController>
@@ -336,6 +336,9 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -344,9 +347,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kz0-pE-ZK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3201" y="850"/>
+            <point key="canvasLocation" x="3200" y="850"/>
         </scene>
-        <!--Skills-->
+        <!--Skills View Controller-->
         <scene sceneID="Xgs-NC-Ngd">
             <objects>
                 <viewController id="7bt-X8-FWN" customClass="SkillsViewController" customModule="LittleWelcomeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -369,14 +372,58 @@
                             <constraint firstItem="Pn8-Pk-Ed9" firstAttribute="centerY" secondItem="syq-t8-b9r" secondAttribute="centerY" id="qdu-ov-nTh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Skills" image="book.fill" catalog="system" id="IMW-gW-RGh"/>
+                    <navigationItem key="navigationItem" id="M6X-ai-5mu"/>
                     <connections>
                         <outlet property="skillsDescriptionLabel" destination="Pn8-Pk-Ed9" id="Fiu-ar-2BL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3c-Bq-IFa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2457" y="850"/>
+            <point key="canvasLocation" x="2442" y="1588"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="mbg-O8-uaZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vCS-Im-lRm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="person.circle.fill" catalog="system" id="u4Z-kg-n4M"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W1F-7u-TQn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iNU-gp-26l" kind="relationship" relationship="rootViewController" id="rFl-zA-Jgd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h6b-Bd-6JJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713.0434782608697" y="849.77678571428567"/>
+        </scene>
+        <!--Skills-->
+        <scene sceneID="aiK-tv-4P8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5oR-h8-O9r" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Skills" image="book.fill" catalog="system" id="IMW-gW-RGh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cFx-ms-sJd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7bt-X8-FWN" kind="relationship" relationship="rootViewController" id="Dcc-4l-i0O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kln-NZ-H7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2443" y="850"/>
         </scene>
     </scenes>
     <resources>

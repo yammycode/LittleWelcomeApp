@@ -22,16 +22,7 @@ final class LoginViewController: UIViewController {
         guard let viewControllers = tabBar.viewControllers else { return }
 
         for viewController in viewControllers {
-            if let viewController = viewController as? WelcomeViewController {
-                viewController.firstName = user.profile.firstName
-            } else if let viewController = viewController as? AboutViewController {
-                setAboutData(for: viewController)
-            } else if let navigationVC = viewController as? UINavigationController {
-                guard let portfolioVC = navigationVC.topViewController as? PortfolioTableViewController else { return }
-                portfolioVC.portfolio = user.profile.portfolio
-            } else if let viewController = viewController as? SkillsViewController {
-                viewController.skills = user.profile.skills
-            }
+            setViewControllerData(for: viewController)
         }
     }
 
@@ -64,6 +55,27 @@ final class LoginViewController: UIViewController {
     }
 
     // MARK: - Private Methods
+    private func setViewControllerData(for viewController: UIViewController) {
+        if let viewController = viewController as? WelcomeViewController {
+            viewController.firstName = user.profile.firstName
+        } else if let navigationVC = viewController as? UINavigationController {
+            if let viewController = navigationVC.topViewController as? AboutViewController {
+                setNavigationTitle(for: navigationVC, with: "ABOUT")
+                setAboutData(for: viewController)
+            } else if let viewController = navigationVC.topViewController as? PortfolioTableViewController {
+                setNavigationTitle(for: navigationVC, with: "PORTFOLIO")
+                viewController.portfolio = user.profile.portfolio
+            } else if let viewController = navigationVC.topViewController as? SkillsViewController {
+                setNavigationTitle(for: navigationVC, with: "SKILLS")
+                viewController.skills = user.profile.skills
+            }
+        }
+    }
+
+    private func setNavigationTitle(for navigation: UINavigationController, with text: String) {
+        navigation.navigationBar.topItem?.title = user.profile.fullName + ": \(text)"
+    }
+
     private func setAboutData(for viewController: AboutViewController) {
         viewController.fullName = user.profile.fullName
         viewController.aboutText = user.profile.aboutText
